@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | OrderPlz</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <style>
+        body { margin: 0; overflow-x: hidden; }
+        .dashboard-header {
+            background: white;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand" style="margin-bottom: 2rem; padding: 0 1rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                OrderPlz Admin
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active">Overview</a></li>
+                <li><a href="#">Live Orders</a></li>
+                <li><a href="#">Menu Management</a></li>
+                <li><a href="#">Financial Reports</a></li>
+                <li><a href="index.html" style="margin-top: 2rem; color: var(--text-secondary);">← Back to Store</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main style="background: #F8FAFC;">
+            <header class="dashboard-header">
+                <h2>Overview Dashboard</h2>
+                <button class="btn btn-outline">Close Canteen</button>
+            </header>
+            
+            <div style="padding: 2rem;">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Today's Revenue</div>
+                        <div class="stat-value">$1,240.50</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Orders Pending</div>
+                        <div class="stat-value" style="color: #D97706;">12</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Completed Orders</div>
+                        <div class="stat-value" style="color: var(--success);">84</div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders Table -->
+                <h3 style="margin-bottom: 1rem;">Recent Incoming Orders</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-8901</td>
+                            <td>2x Signature Cheeseburger, 1x Iced Latte</td>
+                            <td>$21.50</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td><button class="btn btn-accent" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">Accept</button></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8900</td>
+                            <td>1x Superfood Bowl</td>
+                            <td>$10.00</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td><button class="btn btn-accent" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">Accept</button></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8899</td>
+                            <td>1x Iced Latte</td>
+                            <td>$4.50</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td><span style="color: var(--text-secondary); font-size: 0.875rem;">Done</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

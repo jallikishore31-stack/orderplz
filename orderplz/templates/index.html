@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderPlz | Clean & Fresh Canteen</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <style>
+        .page-wrapper { display: grid; grid-template-columns: 1fr 350px; gap: 2rem; }
+        @media(max-width: 900px) { .page-wrapper { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            OrderPlz
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Menu</a>
+            <a href="admin_dashboard.html">Admin</a>
+            <a href="checkout.html" class="btn btn-primary" style="color: white;">
+                Cart (<span id="cart-count">0</span>)
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="menu-header">
+            <h1>Curated Fresh Menu</h1>
+            <p>Experience our chef-selected, high-quality meals prepared fresh daily. Tap any item to easily add it to your order.</p>
+        </div>
+
+        <div class="page-wrapper">
+            <!-- Menu Grid -->
+            <div>
+                <div class="menu-grid">
+                    <!-- Item 1 -->
+                    <div class="card">
+                        <img src="../static/images/cheeseburger.png" alt="Double Cheeseburger" class="card-img">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <span>Signature Cheeseburger</span>
+                                <span class="card-price">$8.50</span>
+                            </div>
+                            <p class="card-text">Crispy, golden grilled double patty with melted cheddar in a toasted artisan bun.</p>
+                            <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('item1', 'Signature Cheeseburger', 8.50)">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <img src="../static/images/salad_bowl.png" alt="Superfood Salad" class="card-img">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <span>Superfood Bowl</span>
+                                <span class="card-price">$10.00</span>
+                            </div>
+                            <p class="card-text">A vibrant mix of fresh organic quinoa, creamy avocado, and seasonal greens.</p>
+                            <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('item2', 'Superfood Bowl', 10.00)">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="card">
+                        <img src="../static/images/iced_latte.png" alt="Iced Caramel Latte" class="card-img">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <span>Artisan Iced Latte</span>
+                                <span class="card-price">$4.50</span>
+                            </div>
+                            <p class="card-text">Premium roasted espresso poured over ice with a touch of sweet caramel.</p>
+                            <button class="btn btn-outline" style="width: 100%;" onclick="addToCart('item3', 'Artisan Iced Latte', 4.50)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Cart Panel -->
+            <div>
+                <div class="cart-panel">
+                    <div class="cart-header">Your Cart</div>
+                    <div id="cart-items" class="cart-items">
+                        <!-- Populated by JS -->
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Convenience Fee</span>
+                            <span>$2.00</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <a href="checkout.html" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">Proceed to Secure Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../static/js/cart.js"></script>
+</body>
+</html>
